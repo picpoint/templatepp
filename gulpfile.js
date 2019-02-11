@@ -52,7 +52,7 @@ gulp.task('preproc', function () {
 	return gulp.src(settings.srcless)
 		.pipe(less())
 		.pipe(gulp.dest(settings.srccss))
- 
+
  //gulp.src('./dist/css/*.css')
   .pipe(cleanCSS())
   .pipe(gulp.dest('./dist/css'))
@@ -85,8 +85,7 @@ gulp.task('htmlmin', function () {
 gulp.task('watch', ['preproc', 'js', 'htmlmin', 'browserSync'], function () {
 	gulp.watch(settings.srcless, ['preproc']);
 	gulp.watch(settings.srcjs + '/*.js', ['js']);
-	//gulp.watch('./dist/css/*.css', ['cleanCSS']);
- gulp.watch('./src/*.html', ['htmlmin']);
+ 	gulp.watch('./src/*.html', ['htmlmin']);
 });
 
 gulp.task('grid', function () {
